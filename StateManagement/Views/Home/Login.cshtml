@@ -1,0 +1,12 @@
+﻿<h2 style="color:red">@Session["Error"]</h2>
+<form action="~/Home/Login" method="post">
+    <div class="form-group">
+        <label for="UserName">Username</label><br />
+        <input type="text" name="UserName" class="form-control" id="UserName" placeholder="Enter Username" required />
+    </div>
+    <div class="form-group">
+        <label for="Password">Password</label><br />
+        <input type="password" name="Password" class="form-control" id="UserName" placeholder="Enter Password" required />
+    </div>
+    <input class="btn btn-primary" type="submit" value="Login"><p><span>Not a member? @Html.ActionLink("Register Here", "Registration", "Home")</span></p>
+</form>

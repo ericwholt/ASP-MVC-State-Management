@@ -1,0 +1,14 @@
+﻿@using StateManagement.Models
+@{
+    User user = (User)Session["User"];
+    if (user.Statement == null || user.Statement == "")
+    {
+        user.Statement = "A man who stands for nothing will fall for anything!";
+    }
+}
+<h1>My Statement</h1>
+<h2>@user.Statement</h2>
+<hr />
+<p class="lead">Username: @user.UserName</p>
+<p class="lead">Email: @user.Email</p>
+<p class="lead">Age: @user.Age</p>

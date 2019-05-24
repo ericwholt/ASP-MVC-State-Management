@@ -1,0 +1,50 @@
+﻿<h2 style="color:red">@Session["Error"]</h2>
+<form action="~/Home/RegisterUser" method="post"
+      oninput='passwordConfirm.setCustomValidity(passwordConfirm.value != Password.value ? "Passwords do not match." : "")'>
+    @*<div class="form-group">
+            <label for="FirstName">First Name</label><br />
+            <input type="text" name="FirstName"
+                   class="form-control" id="FirstName" placeholder="Enter First Name..." required />
+        </div>
+        <div class="form-group">
+            <label for="LastName">Last Name</label><br />
+            <input type="text" name="LastName"
+                   class="form-control" id="LastName" placeholder="Enter First Name..." required />
+        </div>*@
+    <div class="form-group">
+        <label for="UserName">Username</label><br />
+        <input type="text" name="UserName" class="form-control" id="UserName" placeholder="Enter Username" required />
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label><br />
+        <input type="email" name="Email" class="form-control" aria-describedby="emailHelp" id="Email" placeholder="Enter Email Address..." required />
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <fieldset class="form-group">
+        <label for="Password">Password</label><br />
+        <input type="password" name="Password" class="form-control" id="Password"
+               placeholder="Enter Password"
+               pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}+$"
+               aria-describedby="passwordHelp"
+               title="Must contain at least one number and one uppercase and lowercase letter,
+                  and at least 8 or more characters"
+               required />
+        <small id="passwordHelp" class="form-text text-muted">
+            Must contain at least one number and one uppercase and lowercase letter,
+            and at least 8 or more characters
+        </small>
+        <input type="password" name="passwordConfirm" class="form-control" placeholder="Confirm Password" aria-describedby="passwordConfirm" />
+        <small id="passwordConfirm" class="form-text text-muted">
+            Both password fields must match.
+        </small>
+    </fieldset>
+    <div class="form-group">
+        <label for="Age">Age</label>
+        <input type="number" name="Age" class="form-control" title="Enter an Age between 0-140" />
+    </div>
+    <div class="form-group">
+        <label for="Statement">Your Statement</label>
+        <input type="text" name="Statement" class="form-control" />
+    </div>
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>
